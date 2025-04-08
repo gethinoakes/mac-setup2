@@ -1,28 +1,11 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-format = """
-[](color_orange)\
-$os\
-$username\
-[](bg:color_yellow fg:color_orange)\
-$directory\
-[](fg:color_yellow bg:color_aqua)\
-$git_branch\
-$git_status\
-[](fg:color_aqua bg:color_blue)\
-$nodejs\
-$php\
-$java\
-$python\
-[](fg:color_blue bg:color_bg3)\
-$docker_context\
-[ ](fg:color_bg3)\
-$line_break$character"""
+format = """$os $directory $git_branch $git_status $nodejs $php $java $python $docker_context $line_break$character"""
 
-right_format = """[](fg:color_bg1 bg:color_bg3)$time """
+right_format = """$time"""
 
-palette = 'gruvbox_dark'
+palette = 'onedark'
 
 [palettes.gruvbox_dark]
 color_fg0 = '#fbf1c7'
@@ -36,7 +19,7 @@ color_purple = '#b16286'
 color_red = '#cc241d'
 color_yellow = '#d79921'
 
-[palettes.nord]
+[palettes.my_nord]
 dark_blue = '#5E81AC'
 blue = '#81A1C1'
 teal = '#88C0D0'
@@ -66,23 +49,26 @@ black='#2c323c'
 # and use the os module below
 [username]
 show_always = false
+disabled = true
 style_user = "bg:color_orange fg:color_fg0"
 style_root = "bg:color_orange fg:color_fg0"
 format = '[ $user ]($style)'
-disabled = true
 
 # An alternative to the username module which displays a symbol that
 # represents the current operating system
 [os]
 disabled = false
-style = "bg:color_orange fg:color_fg0"
+style = "fg:white"
+format = "[$symbol]($style)"
 
 [os.symbols]
-Macos = "󰀵 "
+Macos = "󰀵"
 
 [directory]
-style = "fg:color_fg0 bg:color_yellow"
-format = "[ $path ]($style)"
+style = "fg:dark_blue"
+format = "[$path]($style) [$read_only]($read_only_style)"
+read_only = " "
+read_only_style = "fg:red"
 truncation_length = 3
 truncation_symbol = "…/"
 truncate_to_repo = true
@@ -109,33 +95,33 @@ home_symbol = '󰋜 ~'
 # Replace the "❯" symbol with "➜"
 [character]
 disabled = false
-success_symbol = '[ ➜](bold green) '
-error_symbol = '[ ✗](#E84D44) '
-vimcmd_symbol = '[](bold fg:color_green)'
-vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
-vimcmd_replace_symbol = '[](bold fg:color_purple)'
-vimcmd_visual_symbol = '[](bold fg:color_yellow)'
+success_symbol = '[➜](bold fg:green)'
+error_symbol = '[✗](bold fg:red)'
+vimcmd_symbol = '[](bold fg:green)'
+vimcmd_replace_one_symbol = '[](bold fg:purple)'
+vimcmd_replace_symbol = '[](bold fg:purple)'
+vimcmd_visual_symbol = '[](bold fg:yellow)'
 
 # Display time
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-style = "bg:color_bg1"
-format = '[[   $time ](fg:color_fg0 bg:color_bg1)]($style)'
+style = "fg:gray"
+format = '[ $time]($style)'
 
 # Git configuration
 [git_branch]
 symbol = ""
-style = "bg:color_aqua"
-format = '[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
+style = "bold italic fg:green"
+format = '[$symbol $branch]($style)'
 
 [git_commit]
 tag_symbol = '  '
 
 [git_status]
 #format = '([\[$all_status$ahead_behind\]]($style) )'
-style = "bg:color_aqua"
-format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
+style = "fg:blue"
+format = '[$all_status$ahead_behind]($style)'
 conflicted = '🏳'
 up_to_date = ''
 untracked = ' '
@@ -144,36 +130,36 @@ diverged = '⇕⇡${ahead_count}⇣${behind_count}'
 behind = '⇣${count}'
 stashed = ' '
 modified = ' '
-staged = '[++\($count\)](green)'
+staged = '[++${count}]'
 renamed = '襁 '
 deleted = ' '
 
 # Language versions
 [nodejs]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "fg:green"
+format = '[$symbol$version]($style)'
 
 [php]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "fg:purple"
+format = '[$symbol$version]($style)'
 
 [java]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "fg:orange"
+format = '[$symbol$version]($style)'
 
 [python]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "fg:yellow"
+format = '[$symbol$version]($style)'
 
 # Docker context
 [docker_context]
 symbol = ""
-style = "bg:color_bg3"
-format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+style = "fg:dark_blue"
+format = '[$symbol$context]($style)'
 disabled = false
 
 [line_break]
