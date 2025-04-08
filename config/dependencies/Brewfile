@@ -22,7 +22,7 @@ brew "tree"                 # CLI tool for displaying directory trees
 brew "z"                    # Quick directory navigation
 
 # Programming tools
-brew "n"                    # Node.js version manager (multi-user support)
+brew "n"                    # Node.js version manager
 brew "oven-sh/bun/bun"
 brew "pnpm"
 

@@ -112,11 +112,6 @@ bu() { bun uninstall "$@"; }
 # Initialize Starship prompt
 eval "$(starship init zsh)"
 
-# Homebrew no password - removed multi-user support that requires sudo
-# unalias brew 2>/dev/null
-# brewser=$(stat -f "%Su" $(which brew))
-# alias brew='sudo -Hu '$brewser' brew'
-
 # Starship configuration
 export STARSHIP_CONFIG="/etc/starship.toml"
 
@@ -131,10 +126,10 @@ zstyle ':completion:*' rehash true
 if type brew &>/dev/null; then
   # Source zsh-syntax-highlighting
   source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-  
+
   # Source zsh-autosuggestions
   source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
-  
+
   # Source zsh-history-substring-search
   source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh 2>/dev/null
 fi
