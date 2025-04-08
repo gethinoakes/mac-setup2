@@ -2,51 +2,60 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](#9A348E)\
+[](color_orange)\
 $os\
 $username\
-[](bg:#DA627D fg:#9A348E)\
+[](bg:color_yellow fg:color_orange)\
 $directory\
-[](fg:#DA627D bg:#FCA17D)\
+[](fg:color_yellow bg:color_aqua)\
 $git_branch\
 $git_status\
-[](fg:#FCA17D bg:#86BBD8)\
-$c\
-$elixir\
-$elm\
-$golang\
-$gradle\
-$haskell\
-$java\
-$julia\
+[](fg:color_aqua bg:color_blue)\
 $nodejs\
-$nim\
-$rust\
-$scala\
-[](fg:#86BBD8 bg:#06969A)\
+$php\
+$java\
+$python\
+[](fg:color_blue bg:color_bg3)\
 $docker_context\
-[](fg:#06969A bg:#33658A)\
+[](fg:color_bg3 bg:color_bg1)\
 $time\
-[ ](fg:#33658A)\
-"""
+[ ](fg:color_bg1)\
+$line_break$character"""
+
+palette = 'gruvbox_dark'
+
+[palettes.gruvbox_dark]
+color_fg0 = '#fbf1c7'
+color_bg1 = '#3c3836'
+color_bg3 = '#665c54'
+color_blue = '#458588'
+color_aqua = '#689d6a'
+color_green = '#98971a'
+color_orange = '#d65d0e'
+color_purple = '#b16286'
+color_red = '#cc241d'
+color_yellow = '#d79921'
 
 # You can also replace your username with a neat symbol like   or disable this
 # and use the os module below
 [username]
 show_always = true
-style_user = "bg:#9A348E"
-style_root = "bg:#9A348E"
-format = '[$user ]($style)'
+style_user = "bg:color_orange fg:color_fg0"
+style_root = "bg:color_orange fg:color_fg0"
+format = '[ $user ]($style)'
 disabled = false
 
 # An alternative to the username module which displays a symbol that
 # represents the current operating system
 [os]
-style = "bg:#9A348E"
-disabled = true # Disabled by default
+disabled = false
+style = "bg:color_orange fg:color_fg0"
+
+[os.symbols]
+Macos = "󰀵"
 
 [directory]
-style = "bg:#DA627D"
+style = "fg:color_fg0 bg:color_yellow"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -55,10 +64,12 @@ truncate_to_repo = true
 # Here is how you can shorten some long paths by text replacement
 # similar to mapped_locations in Oh My Posh:
 [directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
+"Documents" = "󰈙"
+"Downloads" = ""
+"Music" = "󰝚"
+"Pictures" = ""
+"Developer" = "󰲋"
+"Volumes/StudioX" = "StudioX"
 # Keep in mind that the order matters. For example:
 # "Important Documents" = " 󰈙 "
 # will not be replaced, because "Documents" was already substituted before.
@@ -70,74 +81,62 @@ truncate_to_repo = true
 
 # Replace the "❯" symbol with "➜"
 [character]
-success_symbol = "[➜](bold green)"
-error_symbol = "[➜](bold red)"
+disabled = false
+success_symbol = '[](bold fg:color_green)'
+error_symbol = '[](bold fg:color_red)'
+vimcmd_symbol = '[](bold fg:color_green)'
+vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
+vimcmd_replace_symbol = '[](bold fg:color_purple)'
+vimcmd_visual_symbol = '[](bold fg:color_yellow)'
 
 # Display time
 [time]
 disabled = false
-#format = '[\[ $time \]]($style) '
-#time_format = "%H:%M:%S"
-#style = "bright-white"
 time_format = "%R" # Hour:Minute Format
-style = "bg:#33658A"
-format = '[ $time ]($style)'
+style = "bg:color_bg1"
+format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
 
 # Git configuration
 [git_branch]
-symbol = "🌱 "
-style = "bg:#FCA17D"
-format = '[ $symbol $branch ]($style)'
+symbol = ""
+style = "bg:color_aqua"
+format = '[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
 
 [git_commit]
 tag_symbol = '  '
 
 [git_status]
 #format = '([\[$all_status$ahead_behind\]]($style) )'
-style = "bg:#FCA17D"
-format = '[$all_status$ahead_behind ]($style)'
+style = "bg:color_aqua"
+format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
 
 # Language versions
 [nodejs]
-symbol = " "
-format = "via [⬢ $version](bold green) "
-
-[package]
-format = "[$symbol$version]($style) "
-symbol = "📦 "
-style = "bold 208"
-
-# Command duration
-[cmd_duration]
-min_time = 500
-format = "took [$duration](bold yellow)"
-
-# Battery display (useful for laptops)
-[battery]
-full_symbol = "🔋"
-charging_symbol = "⚡️"
-discharging_symbol = "💀"
-
-# Disable AWS profile display by default
-[aws]
-disabled = true
-
-# Disable Python virtualenv details by default (often noisy)
-[python]
-symbol = " "
-disabled = true
-
-[hostname]
-ssh_symbol = " "
-
-[memory_usage]
-symbol = "󰍛 "
-
-[os.symbols]
-Macos = " "
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [php]
-symbol = " "
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
-[swift]
-symbol = " "
+[java]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
+[python]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
+# Docker context
+[docker_context]
+symbol = ""
+style = "bg:color_bg3"
+format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+disabled = false
+
+[line_break]
+disabled = false
