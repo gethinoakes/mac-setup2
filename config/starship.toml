@@ -1,8 +1,72 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
+format = """
+[](#9A348E)\
+$os\
+$username\
+[](bg:#DA627D fg:#9A348E)\
+$directory\
+[](fg:#DA627D bg:#FCA17D)\
+$git_branch\
+$git_status\
+[](fg:#FCA17D bg:#86BBD8)\
+$c\
+$elixir\
+$elm\
+$golang\
+$gradle\
+$haskell\
+$java\
+$julia\
+$nodejs\
+$nim\
+$rust\
+$scala\
+[](fg:#86BBD8 bg:#06969A)\
+$docker_context\
+[](fg:#06969A bg:#33658A)\
+$time\
+[ ](fg:#33658A)\
+"""
+
+# You can also replace your username with a neat symbol like   or disable this
+# and use the os module below
+[username]
+show_always = true
+style_user = "bg:#9A348E"
+style_root = "bg:#9A348E"
+format = '[$user ]($style)'
+disabled = false
+
+# An alternative to the username module which displays a symbol that
+# represents the current operating system
+[os]
+style = "bg:#9A348E"
+disabled = true # Disabled by default
+
+[directory]
+style = "bg:#DA627D"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+truncate_to_repo = true
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = " 󰈙 "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important 󰈙 " = " 󰈙 "
+
 # Add a newline before the prompt
-add_newline = true
+# add_newline = true
 
 # Replace the "❯" symbol with "➜"
 [character]
@@ -12,20 +76,30 @@ error_symbol = "[➜](bold red)"
 # Display time
 [time]
 disabled = false
-format = '[\[ $time \]]($style) '
-time_format = "%H:%M:%S"
-style = "bright-white"
+#format = '[\[ $time \]]($style) '
+#time_format = "%H:%M:%S"
+#style = "bright-white"
+time_format = "%R" # Hour:Minute Format
+style = "bg:#33658A"
+format = '[ $time ]($style)'
 
 # Git configuration
 [git_branch]
 symbol = "🌱 "
+style = "bg:#FCA17D"
+format = '[ $symbol $branch ]($style)'
+
+[git_commit]
+tag_symbol = '  '
 
 [git_status]
-format = '([\[$all_status$ahead_behind\]]($style) )'
-style = "bold yellow"
+#format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "bg:#FCA17D"
+format = '[$all_status$ahead_behind ]($style)'
 
 # Language versions
 [nodejs]
+symbol = " "
 format = "via [⬢ $version](bold green) "
 
 [package]
@@ -37,12 +111,6 @@ style = "bold 208"
 [cmd_duration]
 min_time = 500
 format = "took [$duration](bold yellow)"
-
-# Show current directory
-[directory]
-truncation_length = 3
-truncate_to_repo = true
-style = "blue bold"
 
 # Battery display (useful for laptops)
 [battery]
@@ -56,4 +124,20 @@ disabled = true
 
 # Disable Python virtualenv details by default (often noisy)
 [python]
+symbol = " "
 disabled = true
+
+[hostname]
+ssh_symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[os.symbols]
+Macos = " "
+
+[php]
+symbol = " "
+
+[swift]
+symbol = " "
