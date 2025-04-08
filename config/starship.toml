@@ -1,12 +1,14 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
+# --- Prompt Format --- 
 format = """$os $directory $git_branch $git_status $nodejs $php $java $python $docker_context $line_break$character"""
-
 right_format = """$time"""
 
+# --- Global Settings --- 
 palette = 'onedark'
 
+# --- Palettes --- 
 [palettes.gruvbox_dark]
 color_fg0 = '#fbf1c7'
 color_bg1 = '#3c3836'
@@ -45,17 +47,17 @@ gray='#828997'
 white ='#abb2bf'
 black='#2c323c'
 
-# You can also replace your username with a neat symbol like   or disable this
-# and use the os module below
-[username]
-show_always = false
-disabled = true
-style_user = "bg:color_orange fg:color_fg0"
-style_root = "bg:color_orange fg:color_fg0"
-format = '[ $user ]($style)'
+# --- Prompt Character --- 
+[character]
+disabled = false
+success_symbol = '[➜](bold fg:green)'
+error_symbol = '[✗](bold fg:red)'
+vimcmd_symbol = '[](bold fg:green)'
+vimcmd_replace_one_symbol = '[](bold fg:purple)'
+vimcmd_replace_symbol = '[](bold fg:purple)'
+vimcmd_visual_symbol = '[](bold fg:yellow)'
 
-# An alternative to the username module which displays a symbol that
-# represents the current operating system
+# --- Core Prompt Modules --- 
 [os]
 disabled = false
 style = "fg:white"
@@ -63,6 +65,13 @@ format = "[$symbol]($style)"
 
 [os.symbols]
 Macos = "󰀵"
+
+[username]
+# show_always = false # Keep commented out unless needed
+disabled = true
+style_user = "bg:color_orange fg:color_fg0" # Note: Uses colors from undefined palette if username disabled
+style_root = "bg:color_orange fg:color_fg0"
+format = '[ $user ]($style)'
 
 [directory]
 style = "fg:dark_blue"
@@ -74,8 +83,6 @@ truncation_symbol = "…/"
 truncate_to_repo = true
 home_symbol = '󰋜 ~'
 
-# Here is how you can shorten some long paths by text replacement
-# similar to mapped_locations in Oh My Posh:
 [directory.substitutions]
 "Documents" = "󰈙"
 "Downloads" = ""
@@ -83,33 +90,8 @@ home_symbol = '󰋜 ~'
 "Pictures" = ""
 "Developer" = "󰲋"
 "Volumes/StudioX" = "StudioX"
-# Keep in mind that the order matters. For example:
-# "Important Documents" = " 󰈙 "
-# will not be replaced, because "Documents" was already substituted before.
-# So either put "Important Documents" before "Documents" or use the substituted version:
-# "Important 󰈙 " = " 󰈙 "
 
-# Add a newline before the prompt
-# add_newline = true
-
-# Replace the "❯" symbol with "➜"
-[character]
-disabled = false
-success_symbol = '[➜](bold fg:green)'
-error_symbol = '[✗](bold fg:red)'
-vimcmd_symbol = '[](bold fg:green)'
-vimcmd_replace_one_symbol = '[](bold fg:purple)'
-vimcmd_replace_symbol = '[](bold fg:purple)'
-vimcmd_visual_symbol = '[](bold fg:yellow)'
-
-# Display time
-[time]
-disabled = false
-time_format = "%R" # Hour:Minute Format
-style = "fg:gray"
-format = '[ $time]($style)'
-
-# Git configuration
+# --- VCS Modules --- 
 [git_branch]
 symbol = ""
 style = "bold italic fg:green"
@@ -119,7 +101,6 @@ format = '[$symbol $branch]($style)'
 tag_symbol = '  '
 
 [git_status]
-#format = '([\[$all_status$ahead_behind\]]($style) )'
 style = "fg:blue"
 format = '[$all_status$ahead_behind]($style)'
 conflicted = '🏳'
@@ -134,7 +115,12 @@ staged = '[++${count}]'
 renamed = '襁 '
 deleted = ' '
 
-# Language versions
+# --- Language Modules --- 
+[java]
+symbol = ""
+style = "fg:orange"
+format = '[$symbol$version]($style)'
+
 [nodejs]
 symbol = ""
 style = "fg:green"
@@ -145,22 +131,34 @@ symbol = ""
 style = "fg:purple"
 format = '[$symbol$version]($style)'
 
-[java]
-symbol = ""
-style = "fg:orange"
-format = '[$symbol$version]($style)'
-
 [python]
 symbol = ""
 style = "fg:yellow"
 format = '[$symbol$version]($style)'
 
-# Docker context
+# --- Tooling Modules --- 
 [docker_context]
 symbol = ""
 style = "fg:dark_blue"
 format = '[$symbol$context]($style)'
 disabled = false
 
+# --- Status Modules --- 
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "fg:gray"
+format = '[ $time]($style)'
+
+# --- Layout Modules --- 
 [line_break]
 disabled = false
+
+# --- Add comments for sections that were removed or not present ---
+# Add a newline before the prompt
+# add_newline = true 
+
+# Example of other modules you might add:
+# [conda]
+# style = "fg:green"
+# format = '[${symbol}${environment}]($style)'
