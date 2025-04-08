@@ -2,8 +2,25 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 # --- Prompt Format --- 
-format = """$os $directory $git_branch $git_status $nodejs $php $java $python $docker_context $line_break$character"""
-right_format = """$time"""
+format = """
+$os\
+$username\
+$directory\
+$git_branch\
+$git_status\
+$php\
+$java\
+$python\
+$docker_context\
+$line_break\
+$character
+"""
+right_format = """
+${custom.angular}\
+${custom.pnpm}\
+$nodejs\
+$time
+"""
 
 # --- Global Settings --- 
 palette = 'onedark'
@@ -59,19 +76,19 @@ vimcmd_visual_symbol = '[](bold fg:yellow)'
 
 # --- Core Prompt Modules --- 
 [os]
-disabled = false
+# disabled = false
 style = "fg:white"
 format = "[$symbol]($style)"
 
 [os.symbols]
-Macos = "󰀵"
+Macos = "󰀵 "
 
 [username]
-# show_always = false # Keep commented out unless needed
-disabled = true
+# show_always = true # Keep commented out unless needed
+disabled = false
 style_user = "bg:color_orange fg:color_fg0" # Note: Uses colors from undefined palette if username disabled
 style_root = "bg:color_orange fg:color_fg0"
-format = '[ $user ]($style)'
+format = '[$user ]($style)'
 
 [directory]
 style = "fg:dark_blue"
@@ -95,7 +112,7 @@ home_symbol = '󰋜 ~'
 [git_branch]
 symbol = ""
 style = "bold italic fg:green"
-format = '[$symbol $branch]($style)'
+format = 'on [$symbol $branch]($style)'
 
 [git_commit]
 tag_symbol = '  '
@@ -105,42 +122,68 @@ style = "fg:blue"
 format = '[$all_status$ahead_behind]($style)'
 conflicted = '🏳'
 up_to_date = ''
-untracked = ' '
+untracked = '  '
 ahead = '⇡${count}'
 diverged = '⇕⇡${ahead_count}⇣${behind_count}'
 behind = '⇣${count}'
-stashed = ' '
-modified = ' '
+stashed = '  '
+modified = '  '
 staged = '[++${count}]'
-renamed = '襁 '
-deleted = ' '
+renamed = ' 襁 '
+deleted = '  '
 
 # --- Language Modules --- 
 [java]
-symbol = ""
+symbol = " "
 style = "fg:orange"
 format = '[$symbol$version]($style)'
 
 [nodejs]
-symbol = ""
+detect_files = ['package.json', '.node-version', '!package-lock.yaml']
+symbol = " "
 style = "fg:green"
-format = '[$symbol$version]($style)'
+format = ' [$symbol$version]($style)'
 
 [php]
-symbol = ""
+symbol = " "
 style = "fg:purple"
 format = '[$symbol$version]($style)'
 
 [python]
-symbol = ""
+symbol = " "
 style = "fg:yellow"
 format = '[$symbol$version]($style)'
 
+# --- Custom Modules ---
+[custom.angular]
+description = "Shows the current Angular version"
+detect_folders = [".angular"]
+symbol = "󰚿"
+# Command to extract Angular core version from package.json
+# Requires jq and sed to be installed
+# command = '''jq -r '(.dependencies? // {} + .devDependencies? // {})["@angular/core"] // empty' package.json | sed 's/[^0-9.]*//g' '''
+command = '''jq -r '(.dependencies? // {} + .devDependencies? // {})["@angular/core"] // empty' package.json | sed 's/[^0-9.]*//g' | tr -d '\n' ''' # Remove trailing newline
+style = "fg:red"
+# Format: Symbol, space, version
+format = ' using [$symbol ($output)]($style)'
+disabled = false
+
 # --- Tooling Modules --- 
 [docker_context]
-symbol = ""
+symbol = " "
 style = "fg:dark_blue"
 format = '[$symbol$context]($style)'
+disabled = false
+
+[custom.pnpm]
+description = "Shows the current pnpm version"
+detect_files = ["pnpm-lock.yaml"]
+symbol = " "
+# Command to extract pnpm version
+command = '''pnpm --version | tr -d '\n' ''' # Get version and remove trailing newline
+style = "fg:yellow"
+# Format: Symbol, space, version
+format = ' [$symbol($output)]($style)'
 disabled = false
 
 # --- Status Modules --- 
@@ -148,7 +191,7 @@ disabled = false
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "fg:gray"
-format = '[ $time]($style)'
+format = ' [ $time]($style)'
 
 # --- Layout Modules --- 
 [line_break]

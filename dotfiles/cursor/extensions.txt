@@ -36,6 +36,7 @@ raillyhugo.one-hunter
 rangav.vscode-thunder-client
 redhat.vscode-yaml
 ryu1kn.partial-diff
+sidneys1.gitconfig
 sonarsource.sonarlint-vscode
 streetsidesoftware.code-spell-checker
 streetsidesoftware.code-spell-checker-british-english
@@ -43,6 +44,7 @@ stripe.vscode-stripe
 supabase.postgrestools
 supabase.vscode-supabase-extension
 swmansion.react-native-ide
+tamasfe.even-better-toml
 teabyii.ayu
 timonwong.shellcheck
 tomoki1207.pdf
