@@ -1,48 +1,76 @@
 {
-  // Editor settings
+  // ==================================
+  // General Editor Settings
+  // ==================================
   "editor.accessibilitySupport": "off",
+  "editor.dragAndDrop": false,
+  "editor.guides.bracketPairs": true,
+  "editor.linkedEditing": true,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "bounded",
+  "editor.wordWrapColumn": 120,
+  "terminal.integrated.fontFamily": "JetBrainsMonoNL Nerd Font", // Font affects terminal within editor
+
+  // ==================================
+  // Formatting & Saving
+  // ==================================
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": "always",
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "explicit",
     "source.sortImports": "explicit"
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "css.format.maxPreserveNewLines": 2,
+  "css.format.spaceAroundSelectorSeparator": true,
+  "scss.format.maxPreserveNewLines": 2,
+  "scss.format.spaceAroundSelectorSeparator": true,
+  "html.format.indentInnerHtml": true,
+  "html.format.maxPreserveNewLines": 2,
+
+  // ==================================
+  // Workbench & Appearance
+  // ==================================
   "workbench.colorTheme": "Bearded Theme Monokai Reversed",
   // "workbench.colorTheme": "Bearded Theme Arc Reversed",
-  "editor.dragAndDrop": false,
-  "editor.guides.bracketPairs": true,
-  "editor.linkedEditing": true,
-  "editor.tabSize": 2,
-  "editor.wordWrapColumn": 120,
   "workbench.iconTheme": "symbols",
   "workbench.editor.customLabels.patterns": {
     "**/app/**/page.tsx": "${dirname} - page.tsx",
     "**/app/**/layout.tsx": "${dirname} - layout.tsx"
   },
+  "symbols.hidesExplorerArrows": true, // Related to icon theme/appearance
 
-  // Window settings
+  // ==================================
+  // Window & Explorer
+  // ==================================
   "window.commandCenter": true,
   "window.restoreFullscreen": true,
   "window.zoomLevel": 0.75,
-
-  // Explorer settings
   "explorer.compactFolders": false,
   "explorer.confirmDragAndDrop": false,
 
-  // File associations
+  // ==================================
+  // File Settings
+  // ==================================
   "files.associations": {
     ".env": "dotenv"
   },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
 
-  // Git settings
+  // ==================================
+  // Git & GitHub
+  // ==================================
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
   "githubPullRequests.pushBranch": "always",
   "githubPullRequests.createOnPublishBranch": "never",
 
-  // Formatting settings for different file types
+  // ==================================
+  // Language/File Type Specific Formatting
+  // ==================================
   "[env]": {
     "editor.defaultFormatter": "IronGeek.vscode-env"
   },
@@ -56,25 +84,19 @@
     "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
   },
 
-  // CSS/SCSS/HTML formatting
-  "css.format.maxPreserveNewLines": 2,
-  "css.format.spaceAroundSelectorSeparator": true,
-  "scss.format.maxPreserveNewLines": 2,
-  "scss.format.spaceAroundSelectorSeparator": true,
-  "html.format.indentInnerHtml": true,
-  "html.format.maxPreserveNewLines": 2,
+  // ==================================
+  // Extension Settings
+  // ==================================
 
-  // JavaScript/TypeScript settings
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "typescript.updateImportsOnFileMove.enabled": "always",
-
-  // TailwindCSS settings
+  // TailwindCSS
   "tailwindCSS.includeLanguages": {
     "html": "html",
     "ts": "ts"
   },
 
-  // TypeScript learning settings
+  // Total TypeScript
+  "totalTypeScript.hideAllTips": false,
+  "totalTypeScript.hideBasicTips": true,
   "totalTypeScript.hiddenTips": [
     "interface-declaration",
     "basic-types",
@@ -118,21 +140,32 @@
     "as-const-on-object"
   ],
 
-  // Console log settings
+  // Turbo Console Log
   "turboConsoleLog.addSemicolonInTheEnd": true,
   "turboConsoleLog.insertEnclosingFunction": false,
   "turboConsoleLog.quote": "`",
 
-  // Misc settings
-  "cursor.diffs.useCharacterLevelDiffs": true,
+  // Spell Checker (cSpell)
   "cSpell.diagnosticLevelFlaggedWords": "Information",
   "cSpell.language": "en-GB",
-  "redhat.telemetry.enabled": false,
-  "symbols.hidesExplorerArrows": true,
+
+  // Misc Extensions
+  "redhat.telemetry.enabled": false, // Often related to YAML/Schema extensions
   "vsicons.dontShowNewVersionMessage": true,
-  "editor.wordWrap": "bounded",
+  "dotnetAcquisitionExtension.enableTelemetry": false,
+  "sonarlint.disableTelemetry": true,
+  "stripe.telemetry.enabled": false,
+  "partialDiff.enableTelemetry": false,
+
+  // ==================================
+  // Cursor Settings
+  // ==================================
+  "cursor.diffs.useCharacterLevelDiffs": true,
   "cursor.composer.collapsePaneInputBoxPills": true,
-  "totalTypeScript.hideAllTips": false,
-  "totalTypeScript.hideBasicTips": true,
-  "editor.formatOnSave": true
+  "cursor.chat.terminalShowHoverHint": true,
+  "cursor.cmdk.autoSelect": true,
+  "cursor.cmdk.useThemedDiffBackground": true,
+  "cursor.composer.shouldAutoSaveNonAgent": true,
+  "cursor.composer.shouldAutoScrollToBottom": true,
+  "cursor.composer.showSuggestedFiles": true
 }

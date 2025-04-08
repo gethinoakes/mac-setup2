@@ -17,10 +17,10 @@ run_global_setup() {
   local setup_status=0
 
   # Set up Homebrew permissions for multi-user support
-  # if ! setup_homebrew_permissions; then
-  #   print_warning "Homebrew permissions setup had some issues."
-  #   setup_status=1
-  # fi
+  if ! setup_homebrew_permissions; then
+    print_warning "Homebrew permissions setup had some issues."
+    setup_status=1
+  fi
 
   # Install packages from Brewfile
   if ! install_brew_packages; then

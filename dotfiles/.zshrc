@@ -113,7 +113,7 @@ bu() { bun uninstall "$@"; }
 eval "$(starship init zsh)"
 
 # Starship configuration
-export STARSHIP_CONFIG="/etc/starship.toml"
+export STARSHIP_CONFIG="$HOME/.config/starship.toml"
 
 # Configure zsh completion system
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
