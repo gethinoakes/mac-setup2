@@ -1,137 +1,138 @@
 {
-    // Editor settings
-    "editor.accessibilitySupport": "off",
-    "editor.codeActionsOnSave": {
-      "source.fixAll": "always", 
-      "source.fixAll.eslint": "explicit",
-      "source.organizeImports": "explicit",
-      "source.sortImports": "explicit"
-    },
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "workbench.colorTheme": "Bearded Theme Monokai Reversed",
-    // "workbench.colorTheme": "Bearded Theme Arc Reversed",
-    "editor.dragAndDrop": false,
-    "editor.guides.bracketPairs": true,
-    "editor.linkedEditing": true,
-    "editor.tabSize": 2,
-    "editor.wordWrapColumn": 120,
-    "workbench.iconTheme": "symbols",
-    "workbench.editor.customLabels.patterns": {
-      "**/app/**/page.tsx": "${dirname} - page.tsx", 
-      "**/app/**/layout.tsx": "${dirname} - layout.tsx"
-    },
+  // Editor settings
+  "editor.accessibilitySupport": "off",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit",
+    "source.sortImports": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.colorTheme": "Bearded Theme Monokai Reversed",
+  // "workbench.colorTheme": "Bearded Theme Arc Reversed",
+  "editor.dragAndDrop": false,
+  "editor.guides.bracketPairs": true,
+  "editor.linkedEditing": true,
+  "editor.tabSize": 2,
+  "editor.wordWrapColumn": 120,
+  "workbench.iconTheme": "symbols",
+  "workbench.editor.customLabels.patterns": {
+    "**/app/**/page.tsx": "${dirname} - page.tsx",
+    "**/app/**/layout.tsx": "${dirname} - layout.tsx"
+  },
 
-    // Window settings
-    "window.commandCenter": true,
-    "window.restoreFullscreen": true,
-    "window.zoomLevel": 0.75,
+  // Window settings
+  "window.commandCenter": true,
+  "window.restoreFullscreen": true,
+  "window.zoomLevel": 0.75,
 
-    // Explorer settings
-    "explorer.compactFolders": false,
-    "explorer.confirmDragAndDrop": false,
+  // Explorer settings
+  "explorer.compactFolders": false,
+  "explorer.confirmDragAndDrop": false,
 
-    // File associations
-    "files.associations": {
-      ".env": "dotenv"
-    },
+  // File associations
+  "files.associations": {
+    ".env": "dotenv"
+  },
 
-    // Git settings
-    "git.autofetch": true,
-    "git.confirmSync": false,
-    "git.enableSmartCommit": true,
-    "githubPullRequests.pushBranch": "always",
-    "githubPullRequests.createOnPublishBranch": "never",
+  // Git settings
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "githubPullRequests.pushBranch": "always",
+  "githubPullRequests.createOnPublishBranch": "never",
 
-    // Formatting settings for different file types
-    "[env]": {
-      "editor.defaultFormatter": "IronGeek.vscode-env"
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[shellscript]": {
-      "editor.defaultFormatter": "foxundermoon.shell-format"
-    },
-    "[sql]": {
-      "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
-    },
+  // Formatting settings for different file types
+  "[env]": {
+    "editor.defaultFormatter": "IronGeek.vscode-env"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[sql]": {
+    "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
+  },
 
-    // CSS/SCSS/HTML formatting
-    "css.format.maxPreserveNewLines": 2,
-    "css.format.spaceAroundSelectorSeparator": true,
-    "scss.format.maxPreserveNewLines": 2,
-    "scss.format.spaceAroundSelectorSeparator": true,
-    "html.format.indentInnerHtml": true,
-    "html.format.maxPreserveNewLines": 2,
+  // CSS/SCSS/HTML formatting
+  "css.format.maxPreserveNewLines": 2,
+  "css.format.spaceAroundSelectorSeparator": true,
+  "scss.format.maxPreserveNewLines": 2,
+  "scss.format.spaceAroundSelectorSeparator": true,
+  "html.format.indentInnerHtml": true,
+  "html.format.maxPreserveNewLines": 2,
 
-    // JavaScript/TypeScript settings
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "typescript.updateImportsOnFileMove.enabled": "always",
+  // JavaScript/TypeScript settings
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
 
-    // TailwindCSS settings
-    "tailwindCSS.includeLanguages": {
-      "html": "html",
-      "ts": "ts"
-    },
+  // TailwindCSS settings
+  "tailwindCSS.includeLanguages": {
+    "html": "html",
+    "ts": "ts"
+  },
 
-    // TypeScript learning settings
-    "totalTypeScript.hiddenTips": [
-      "interface-declaration",
-      "basic-types",
-      "variable-type-annotation",
-      "passing-generics-to-types",
-      "readonly-utility-type",
-      "typing-function-parameters",
-      "ts-object-type",
-      "array-type",
-      "optional-object-property",
-      "union-type",
-      "function-return-type",
-      "typeof",
-      "literal-type",
-      "type-alias-declaration",
-      "null-keyword",
-      "undefined-keyword",
-      "as-assertion",
-      "non-null-expression",
-      "partial-utility-type",
-      "returntype-utility-type",
-      "type-predicate",
-      "in-operator-narrowing",
-      "required-utility-type",
-      "awaited-utility-type",
-      "keyof",
-      "never-keyword",
-      "mapped-type",
-      "tuple-type",
-      "type-alias-with-generics",
-      "conditional-type",
-      "nested-conditional-type",
-      "type-alias-with-multiple-generics",
-      "infer",
-      "extract-utility-type",
-      "as-const",
-      "record-utility-type",
-      "omit-utility-type",
-      "generic-slots-in-functions",
-      "interface-with-generics",
-      "as-const-on-object"
-    ],
+  // TypeScript learning settings
+  "totalTypeScript.hiddenTips": [
+    "interface-declaration",
+    "basic-types",
+    "variable-type-annotation",
+    "passing-generics-to-types",
+    "readonly-utility-type",
+    "typing-function-parameters",
+    "ts-object-type",
+    "array-type",
+    "optional-object-property",
+    "union-type",
+    "function-return-type",
+    "typeof",
+    "literal-type",
+    "type-alias-declaration",
+    "null-keyword",
+    "undefined-keyword",
+    "as-assertion",
+    "non-null-expression",
+    "partial-utility-type",
+    "returntype-utility-type",
+    "type-predicate",
+    "in-operator-narrowing",
+    "required-utility-type",
+    "awaited-utility-type",
+    "keyof",
+    "never-keyword",
+    "mapped-type",
+    "tuple-type",
+    "type-alias-with-generics",
+    "conditional-type",
+    "nested-conditional-type",
+    "type-alias-with-multiple-generics",
+    "infer",
+    "extract-utility-type",
+    "as-const",
+    "record-utility-type",
+    "omit-utility-type",
+    "generic-slots-in-functions",
+    "interface-with-generics",
+    "as-const-on-object"
+  ],
 
-    // Console log settings
-    "turboConsoleLog.addSemicolonInTheEnd": true,
-    "turboConsoleLog.insertEnclosingFunction": false,
-    "turboConsoleLog.quote": "`",
+  // Console log settings
+  "turboConsoleLog.addSemicolonInTheEnd": true,
+  "turboConsoleLog.insertEnclosingFunction": false,
+  "turboConsoleLog.quote": "`",
 
-    // Misc settings
-    "cursor.diffs.useCharacterLevelDiffs": true,
-    "cSpell.diagnosticLevelFlaggedWords": "Information",
-    "cSpell.language": "en-GB",
-    "redhat.telemetry.enabled": false,
-    "symbols.hidesExplorerArrows": true,
-    "vsicons.dontShowNewVersionMessage": true,
-    "editor.wordWrap": "bounded",
-    "cursor.composer.collapsePaneInputBoxPills": true,
-    "totalTypeScript.hideAllTips": false,
-    "totalTypeScript.hideBasicTips": true,
+  // Misc settings
+  "cursor.diffs.useCharacterLevelDiffs": true,
+  "cSpell.diagnosticLevelFlaggedWords": "Information",
+  "cSpell.language": "en-GB",
+  "redhat.telemetry.enabled": false,
+  "symbols.hidesExplorerArrows": true,
+  "vsicons.dontShowNewVersionMessage": true,
+  "editor.wordWrap": "bounded",
+  "cursor.composer.collapsePaneInputBoxPills": true,
+  "totalTypeScript.hideAllTips": false,
+  "totalTypeScript.hideBasicTips": true,
+  "editor.formatOnSave": true
 }
