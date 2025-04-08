@@ -17,6 +17,7 @@ A personal script for setting up fresh macOS with my preferred configurations.
     - `macos_preferences.sh` - Sets macOS system preferences
     - `dock_setup.sh` - Configures dock items and appearance
     - `folder_icons_setup.sh` - Customizes folder icons
+    - `app_icons_setup.sh` - Customizes application icons using fileicon
   - **utils/** - Utility modules
     - `print_utils.sh` - Printing and UI functions
     - `utils.sh` - General utility functions
@@ -28,18 +29,21 @@ A personal script for setting up fresh macOS with my preferred configurations.
 - **config/** - Configuration files
   - **dependencies/** - Dependency configuration
     - `Brewfile` - Package definitions for Homebrew
+    - `Brewfile_mas` - Mac App Store package definitions for Homebrew
     - `npm_packages` - Global NPM packages to install
-    - `manifest.json` - Dependency version requirements
   - `starship.toml` - Starship prompt configuration
   - **folder-icons/** - Custom folder icons
-  - **terminal/** - Terminal themes and profiles
+  - **app-icons/** - Configuration for custom application icons
 - **docs/** - Documentation
   - `gum.md` - Documentation for Gum CLI tool
   - `ghostty-config-reference.md` - Reference for Ghostty terminal configuration
   - `ghostty-keybinds.md` - Keyboard shortcuts for Ghostty terminal
+  - `cursor-sync.md` - Notes on Cursor IDE synchronization
 - **macos-defaults/** - macOS-specific dotfiles
 - **dotfiles/** - Configuration files for various tools
-  - **ghostty/** - Ghostty terminal configuration files
+  - **ghostty/** - Ghostty terminal emulator configuration files
+  - **cursor/** - Cursor IDE configuration files
+  - **browser-extensions/** - Configuration for browser extensions
   - `.zshrc` - ZSH shell configuration
   - `.gitconfig` - Git configuration
   - `.gitignore_global` - Global Git ignore rules
@@ -115,6 +119,7 @@ cleanup_sudo            # Clean up sudo processes
 - **Dotfiles**: Version-controlled configuration files with backup and linking
 - **Dock**: Custom dock items, ordering, and appearance for both personal and work accounts
 - **Folder Icons**: Custom icons for improved visual navigation
+- **App Icons**: Custom application icons using fileicon
 - **macOS Preferences**: System-wide settings for UI, performance, and security
 
 #### Utility Modules
@@ -127,11 +132,11 @@ cleanup_sudo            # Clean up sudo processes
 ### Configurations (`config/`)
 
 - **Brewfile**: Core CLI tools, desktop applications, development tools, and system utilities
+- **Brewfile_mas**: Mac App Store applications installed via Homebrew
 - **npm_packages**: Global Node.js packages with optional versions
-- **manifest.json**: Version requirements for compatibility checking
 - **starship.toml**: Custom prompt configuration
 - **folder-icons**: SVG icons for high-resolution displays
-- **terminal**: Color schemes, layout settings, and font configurations
+- **app-icons**: Configuration for custom application icons
 
 ### Dotfiles
 
@@ -148,6 +153,8 @@ Notable dotfiles include:
 - `.gitconfig` - Git user configuration and aliases
 - `.gitignore_global` - Global Git ignore patterns
 - **ghostty/** - Ghostty terminal emulator configuration
+- **cursor/** - Cursor IDE settings synchronization configuration
+- **browser-extensions/** - Vimium configuration for browsers
 
 ## Using Gum for UI
 
@@ -169,6 +176,7 @@ Notable dotfiles include:
 - **macOS Preferences**: System and application settings
 - **User Experience**: Enhanced UI with Gum CLI tool
 - **Folder Icon Customization**: Custom icons for system folders
+- **App Icon Customization**: Custom icons for applications
 - **Dock Configuration**: Custom dock layout and behavior
 
 ## Personal Notes
