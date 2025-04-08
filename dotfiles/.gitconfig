@@ -1,0 +1,66 @@
+[user]
+	name = Gethin Oakes
+	email = github@gethin.dev
+	github = gethinoakes
+
+[color]
+	# Enable colorized output for better readability
+	ui = auto
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+
+[push]
+	# Configure how 'git push' behaves
+	default = simple     # Push only the current branch to the upstream branch
+	followTags = true    # Automatically push tags when pushing commits
+
+[pull]
+	# Configure how 'git pull' behaves
+	rebase = true        # Use rebase instead of merge when pulling
+
+[fetch]
+	# Configure how 'git fetch' behaves
+	prune = true         # Remove remote-tracking branches that no longer exist on remote
+
+[alias]
+	# Basic aliases
+	st = status
+	co = checkout
+	ci = commit
+	br = branch
+	df = diff
+	dc = diff --cached
+	l = log --oneline
+	ls = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	
+	# Advanced aliases
+	amend = commit --amend  # Modify the last commit
+	unstage = reset HEAD --  # Remove files from staging area
+	last = log -1 HEAD      # Show the last commit
+	visual = !gitk          # Open the graphical interface
+	
+	# Show a tree of commits
+	tree = log --graph --oneline --decorate
+	
+	# Stash operations
+	save = stash save    # Save changes to stash
+	pop = stash pop      # Apply and remove stashed changes
+	
+	# Show changes
+	changes = diff --name-status  # Show changed files with status
+	
+	# Discard changes
+	discard = checkout --  # Discard changes in working directory
+
+[credential]
+	# Store credentials securely in macOS keychain
+	helper = osxkeychain
+
+[init]
+	# Set default branch name for new repositories
+	defaultBranch = main
+[safe]
+	directory = /Users/Shared/mac-setup

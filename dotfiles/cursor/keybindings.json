@@ -1,0 +1,46 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "cmd+i",
+    "command": "composerMode.agent"
+  },
+  {
+    "key": "shift+cmd+a",
+    "command": "searchOpenAllResults.open"
+  },
+  {
+    "key": "cmd+l",
+    "command": "turboConsoleLog.displayLogMessage"
+  },
+  {
+    "key": "alt+cmd+p",
+    "command": "workbench.action.pinEditor",
+    "when": "!activeEditorIsPinned"
+  },
+  {
+    "key": "alt+cmd+p",
+    "command": "workbench.action.unpinEditor",
+    "when": "activeEditorIsPinned"
+  },
+  {
+    "key": "alt+k",
+    "command": "workbench.action.terminal.clear",
+    "when": "terminalFocus && terminalHasBeenCreated && !accessibilityModeEnabled || terminalFocus && terminalProcessSupported && !accessibilityModeEnabled"
+  },
+  {
+    "key": "cmd+'",
+    "command": "extension.switchTemplate"
+  },
+  {
+    "key": "shift+alt+o",
+    "command": "-extension.switchTemplate"
+  },
+  {
+    "key": "cmd+'",
+    "command": "extension.switchTs"
+  },
+  {
+    "key": "shift+alt+u",
+    "command": "-extension.switchTs"
+  },
+]

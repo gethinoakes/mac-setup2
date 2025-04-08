@@ -1,0 +1,31 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+## General Guidelines
+
+### Basic Principles
+
+- Use English for all code, documentation, and comments.
+- Prioritize modular, reusable, and scalable code.
+- Prioritize readable and easy to understand code over shorter code.
+- Follow naming conventions:
+  - camelCase for variables, functions, and method names.
+  - PascalCase for class names.
+  - snake_case for file names and directory structures.
+  - UPPER_CASE for environment variables.
+- Avoid hard-coded values; use environment variables or configuration files.
+
+### Bash Scripting
+
+- Use descriptive names for scripts and variables (e.g., `backup_files.sh` or `log_rotation`).
+- Write modular scripts with functions to enhance readability and reuse.
+- Include comments for each major section or function.
+- Avoid hardcoding; use environment variables or parameterized inputs.
+- Use `shellcheck` to lint scripts and improve quality.
+- Use `trap` for error handling and cleaning up temporary files.
+
+### Testing and Documentation
+
+- Document solutions thoroughly in markdown.

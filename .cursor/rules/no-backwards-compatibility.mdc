@@ -1,0 +1,6 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+I do not care about backwards compatibility. When making code changes do not keep code for deprecation or backwards compatibility.

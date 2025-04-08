@@ -1,0 +1,10 @@
+# Mac App Store applications
+mas "Automounter", id: 1160435653
+mas "Dato", id: 1470584107
+mas "Dropover", id: 1355679052
+mas "Hyperspace", id: 6739505345
+mas "Parcel", id: 639968404
+mas "Snippety", id: 1530751461
+mas "Testflight", id: 899247664
+mas "Unsplash Wallpapers", id: 1284863847
+mas "Xcode", id: 497799835

@@ -1,0 +1,17 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Always Use Gum for CLI Functionality
+
+- All CLI interactions must use Gum (https://github.com/charmbracelet/gum) [gum.md](mdc:docs/gum.md) for:
+  - User prompts and confirmations
+  - Spinners and progress indicators
+  - Styled text output
+  - Input validation
+  - Menu selections
+- Fallback to traditional methods only when Gum is not available
+- Use Gum's styling capabilities for consistent, polished UI
+- Prefer Gum's interactive components over static text
+- Ensure Gum usage follows the project's existing patterns

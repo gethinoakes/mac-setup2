@@ -1,0 +1,83 @@
+# Taps
+tap "domt4/autoupdate"       # Homebrew autoupdate functionality
+tap "oven-sh/bun"
+
+# Shell and prompt
+brew "starship"
+brew "zsh"
+
+# ZSH plugins
+brew "zsh-autocomplete"
+brew "zsh-autosuggestions"
+brew "zsh-history-substring-search"
+brew "zsh-syntax-highlighting"
+
+# CLI tools
+brew "dockutil"             # Tool for managing dock items
+brew "fileicon"             # CLI tool for managing custom icons
+brew "fzf"                  # Command-line fuzzy finder
+brew "mas"                  # Mac App Store CLI
+brew "pinentry-mac"         # Required for Homebrew autoupdate with sudo
+brew "tree"                 # CLI tool for displaying directory trees
+brew "z"                    # Quick directory navigation
+
+# Programming tools
+brew "n"                    # Node.js version manager (multi-user support)
+brew "oven-sh/bun/bun"
+brew "pnpm"
+
+# Applications
+cask "1password"
+cask "alt-tab"
+cask "android-studio"
+cask "arc"
+cask "beardie"
+cask "betterdisplay"
+cask "brave-browser"
+cask "carbon-copy-cloner"
+cask "chatgpt"
+cask "command-x"
+cask "cursor"
+cask "daisydisk"
+cask "expo-orbit"
+cask "figma"
+cask "fmail2"
+cask "ghostty"
+cask "google-chrome"
+cask "hazel"
+cask "iina"
+cask "jordanbaird-ice"
+cask "microsoft-teams"
+cask "notion"
+cask "pictogram"
+cask "protonvpn"
+cask "raycast"
+cask "setapp"
+cask "shortwave"
+cask "sketch"
+cask "spotify"
+cask "telegram"
+cask "the-unarchiver"
+cask "visual-studio-code"
+cask "zen-browser"
+
+# Quick Look plugins
+cask "qlcolorcode"
+cask "qlmarkdown"
+cask "qlstephen"
+cask "qlvideo"
+cask "quicklook-csv"
+cask "quicklook-json"
+cask "syntax-highlight"
+
+# Fonts
+cask "font-fira-code-nerd-font"
+cask "font-fira-code"
+cask "font-hack-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-jetbrains-mono"
+cask "font-kanit"
+cask "font-montserrat"
+cask "font-nunito"
+cask "font-poppins"
+cask "font-source-sans-3"
