@@ -59,6 +59,7 @@ cask "sketch"
 cask "spotify"
 cask "telegram"
 cask "the-unarchiver"
+cask "todoist"
 cask "visual-studio-code"
 cask "zen-browser"
 
