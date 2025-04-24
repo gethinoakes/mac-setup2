@@ -167,5 +167,16 @@
   "cursor.cmdk.useThemedDiffBackground": true,
   "cursor.composer.shouldAutoSaveNonAgent": true,
   "cursor.composer.shouldAutoScrollToBottom": true,
-  "cursor.composer.showSuggestedFiles": true
+  "cursor.composer.showSuggestedFiles": true,
+  "sonarlint.rules": {
+    "css:S4662": {
+      "level": "off"
+    }
+  },
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "[properties]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  }
 }

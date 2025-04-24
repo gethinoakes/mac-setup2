@@ -133,3 +133,7 @@ if type brew &>/dev/null; then
   # Source zsh-history-substring-search
   source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh 2>/dev/null
 fi
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
