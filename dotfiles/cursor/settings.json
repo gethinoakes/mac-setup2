@@ -34,7 +34,7 @@
   // ==================================
   "workbench.colorTheme": "Bearded Theme Monokai Reversed",
   // "workbench.colorTheme": "Bearded Theme Arc Reversed",
-  "workbench.iconTheme": "symbols",
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.editor.customLabels.patterns": {
     "**/app/**/page.tsx": "${dirname} - page.tsx",
     "**/app/**/layout.tsx": "${dirname} - layout.tsx"
@@ -137,7 +137,8 @@
     "omit-utility-type",
     "generic-slots-in-functions",
     "interface-with-generics",
-    "as-const-on-object"
+    "as-const-on-object",
+    "pick-utility-type"
   ],
 
   // Turbo Console Log
@@ -178,5 +179,15 @@
   },
   "[properties]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
-  }
+  },
+  "cursor.composer.shouldAllowCustomModes": true,
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "rapidapi.terminalLink.enabled": false,
+  "[dotenv]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "css.validate": false,
+  "update.releaseTrack": "prerelease"
 }
