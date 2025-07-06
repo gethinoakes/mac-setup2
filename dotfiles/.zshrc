@@ -23,6 +23,9 @@ unsetopt beep
 # Path additions - Set these early before anything else
 export PATH="$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$PATH"
 
+# Deno path
+export PATH="$HOME/.deno/bin:$PATH"
+
 # Node.js configuration - must be set before anything else
 export N_PREFIX="$HOME/.n"
 export PATH="$N_PREFIX/bin:$PATH"
@@ -93,7 +96,7 @@ alias b='bun'
 # Java configuration
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+export JAVA_HOME=/opt/homebrew/opt/openjdk@17
 
 # Android SDK configuration
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -133,7 +136,6 @@ if type brew &>/dev/null; then
   # Source zsh-history-substring-search
   source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh 2>/dev/null
 fi
-
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)

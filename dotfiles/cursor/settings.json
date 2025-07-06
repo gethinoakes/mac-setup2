@@ -18,7 +18,8 @@
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": "always",
-    "source.fixAll.eslint": "explicit",
+    // changed to never because eslint keeps hanging for some reason - change back to "always" in future
+    "source.fixAll.eslint": "never",
     "source.organizeImports": "explicit",
     "source.sortImports": "explicit"
   },
@@ -35,10 +36,11 @@
   "workbench.colorTheme": "Bearded Theme Monokai Reversed",
   // "workbench.colorTheme": "Bearded Theme Arc Reversed",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.editor.customLabels.patterns": {
-    "**/app/**/page.tsx": "${dirname} - page.tsx",
-    "**/app/**/layout.tsx": "${dirname} - layout.tsx"
-  },
+  // "workbench.editor.customLabels.patterns": {
+  //   "**/app/**/page.tsx": "${dirname} - page.tsx",
+  //   "**/app/**/layout.tsx": "${dirname} - layout.tsx"
+  // },
+  "workbench.editor.labelFormat": "short",
   "symbols.hidesExplorerArrows": true, // Related to icon theme/appearance
 
   // ==================================
@@ -189,5 +191,24 @@
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "css.validate": false,
-  "update.releaseTrack": "prerelease"
+  "update.releaseTrack": "prerelease",
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.db": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.s3db": "${capture}.${extname}-*"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "deno.enable": false,
+  "cursor.composer.shouldChimeAfterChatFinishes": true
 }

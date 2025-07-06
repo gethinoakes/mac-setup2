@@ -65,5 +65,9 @@
     "key": "shift+cmd+h",
     "command": "-RNIDE.deviceHomeButtonPress",
     "when": "RNIDE.extensionIsActive"
+  },
+  {
+    "key": "cmd",
+    "command": "composerMode.changelog"
   }
 ]
